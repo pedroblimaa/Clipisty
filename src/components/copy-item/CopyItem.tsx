@@ -1,4 +1,6 @@
 
+import './CopyItem.css'
+
 interface CopyItemProps {
   text: string
   onClick: () => void
@@ -7,7 +9,7 @@ interface CopyItemProps {
 function CopyItem({ text, onClick }: CopyItemProps) {
   return (
     <div>
-      <button onClick={onClick}>{text}</button>
+      <button className="text-buton" onClick={onClick}>{text}</button>
     </div>
   )
 }
