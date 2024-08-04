@@ -102,10 +102,11 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
         "resizable": true,
         "title": "Clipisty",
-        "width": 800
+        "height": 600,
+        "width": 500,
+        "decorations": false
       }
     ]
   }

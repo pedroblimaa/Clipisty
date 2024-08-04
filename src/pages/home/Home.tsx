@@ -3,6 +3,7 @@ import { appWindow } from '@tauri-apps/api/window'
 import { useEffect, useRef, useState } from 'react'
 import CopyItem from '../../components/copy-item/CopyItem'
 import AppHelper from '../../utils/appHelper'
+import './Home.css'
 
 function Home() {
   const [textList, setTextList] = useState<string[]>([])
@@ -45,13 +46,11 @@ function Home() {
   }
 
   return (
-    <>
+    <div className='btns-container'>
       {textList.map((text, index) => (
-        <div key={index}>
-          <CopyItem text={text} onClick={() => setToClipboard(text)}></CopyItem>
-        </div>
+          <CopyItem text={text} onClick={() => setToClipboard(text)} key={index}></CopyItem>
       ))}
-    </>
+    </div>
   )
 }
 

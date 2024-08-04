@@ -1,4 +1,3 @@
-
 import './CopyItem.css'
 
 interface CopyItemProps {
@@ -8,9 +7,11 @@ interface CopyItemProps {
 
 function CopyItem({ text, onClick }: CopyItemProps) {
   return (
-    <div>
-      <button className="text-buton" onClick={onClick}>{text}</button>
-    </div>
+    <>
+      <div className='text-buton' onClick={onClick}>
+        <p>{text}</p>
+      </div>
+    </>
   )
 }
 

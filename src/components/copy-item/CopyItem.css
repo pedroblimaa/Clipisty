@@ -1,6 +1,23 @@
 .text-buton {
-  margin: 5px;
   max-height: 100px;
-  overflow: hidden;
-  width: 100%;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 1em;
+  border: 1px solid #fff;
+  background-color: #141414;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+
+  p {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.text-buton:hover {
+  background-color: #1f1f1f;
 }

@@ -1,8 +1,13 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  overflow: auto;
   text-align: center;
+  padding: 20px;
+}
+
+.home-container {
+  width: 100%;
 }
 
 .logo {
