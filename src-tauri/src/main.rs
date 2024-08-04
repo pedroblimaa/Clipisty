@@ -8,11 +8,17 @@ fn paste_text() {
     helpers::clipboard_handler::send_paste_keys();
 }
 
+#[tauri::command]
+fn get_mouse_position() -> (i32, i32) {
+    helpers::system_helper::get_mouse_position()
+}
+
 fn main() {
     let tray = helpers::tray_handler::create_tray();
 
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![paste_text])
+        .invoke_handler(tauri::generate_handler![get_mouse_position])
         .system_tray(tray)
         .on_system_tray_event(|app, event| {
             helpers::tray_handler::handle_system_tray_event(app, event);

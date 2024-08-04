@@ -1,10 +1,22 @@
-import { clipboard } from '@tauri-apps/api'
+import { clipboard, globalShortcut } from '@tauri-apps/api'
+import { appWindow } from '@tauri-apps/api/window'
 import { useEffect, useRef, useState } from 'react'
 import CopyItem from '../../components/copy-item/CopyItem'
+import AppHelper from '../../utils/appHelper'
 
 function Home() {
   const [textList, setTextList] = useState<string[]>([])
   const textListRef = useRef(textList)
+
+  useEffect(() => {
+    globalShortcut.register('CmdOrCtrl+Alt+V', async () => {
+      AppHelper.showWindowOnMousePosition()
+    })
+
+    return () => {
+      globalShortcut.unregister('CmdOrCtrl+Alt+V')
+    }
+  })
 
   useEffect(() => {
     textListRef.current = textList
@@ -25,11 +37,11 @@ function Home() {
     if (!textExist && text) {
       setTextList([...textListRef.current, text])
     }
-    console.log(textListRef.current)
   }
 
   const setToClipboard = (text: string) => {
     clipboard.writeText(text)
+    appWindow.hide()
   }
 
   return (
