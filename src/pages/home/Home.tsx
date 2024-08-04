@@ -1,22 +1,10 @@
-import { clipboard, globalShortcut, invoke } from '@tauri-apps/api'
+import { clipboard } from '@tauri-apps/api'
 import { useEffect, useRef, useState } from 'react'
 import CopyItem from '../../components/copy-item/CopyItem'
 
 function Home() {
   const [textList, setTextList] = useState<string[]>([])
-  const [selectedText, setSelectedText] = useState<string>('')
   const textListRef = useRef(textList)
-
-  useEffect(() => {
-    globalShortcut.register('CmdOrCtrl+Alt+V', () => {
-      clipboard.writeText(selectedText)
-      invoke('paste_text')
-    })
-
-    return (): void => {
-      globalShortcut.unregister('CmdOrCtrl+Alt+V')
-    }
-  })
 
   useEffect(() => {
     textListRef.current = textList
@@ -40,13 +28,15 @@ function Home() {
     console.log(textListRef.current)
   }
 
+  const setToClipboard = (text: string) => {
+    clipboard.writeText(text)
+  }
+
   return (
     <>
       {textList.map((text, index) => (
         <div key={index}>
-          <CopyItem
-            text={text}
-            onClick={() => setSelectedText(text)}></CopyItem>
+          <CopyItem text={text} onClick={() => setToClipboard(text)}></CopyItem>
         </div>
       ))}
     </>
