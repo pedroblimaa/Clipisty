@@ -7,7 +7,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "clipisty-tauri",
+    "productName": "clipisty",
     "version": "0.1.0"
   },
   "tauri": {
@@ -41,7 +41,7 @@
         "setCursorPosition": false,
         "setCursorVisible": false,
         "setDecorations": false,
-        "setFocus": false,
+        "setFocus": true,
         "setFullscreen": false,
         "setIcon": false,
         "setIgnoreCursorEvents": false,
@@ -75,7 +75,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.clipisty",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -90,7 +90,10 @@
       "windows": {
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",
-        "timestampUrl": ""
+        "timestampUrl": "",
+        "webviewInstallMode": {
+          "type": "downloadBootstrapper"
+        }
       }
     },
     "security": {

@@ -1,12 +1,14 @@
 import { clipboard, globalShortcut } from '@tauri-apps/api'
 import { appWindow } from '@tauri-apps/api/window'
 import { useEffect, useRef, useState } from 'react'
+
 import CopyItem from '../../components/copy-item/CopyItem'
+import { TextItem } from '../../models/textItem'
 import AppHelper from '../../utils/appHelper'
 import './Home.css'
 
 function Home() {
-  const [textList, setTextList] = useState<string[]>([])
+  const [textList, setTextList] = useState<TextItem[]>([])
   const textListRef = useRef(textList)
 
   useEffect(() => {
@@ -32,12 +34,8 @@ function Home() {
   }, [])
 
   const handleClipboardText = async (): Promise<void> => {
-    const text = await clipboard.readText()
-    const textExist = textListRef.current.some(item => item === text)
-
-    if (!textExist && text) {
-      setTextList([...textListRef.current, text])
-    }
+    const newList = await AppHelper.createNewTextList(textListRef.current)
+    setTextList(newList)
   }
 
   const setToClipboard = (text: string) => {
@@ -47,8 +45,11 @@ function Home() {
 
   return (
     <div className='btns-container'>
-      {textList.map((text, index) => (
-          <CopyItem text={text} onClick={() => setToClipboard(text)} key={index}></CopyItem>
+      {textList.map(textItem => (
+        <CopyItem
+          text={textItem.text}
+          onClick={() => setToClipboard(textItem.text)}
+          key={textItem.date}></CopyItem>
       ))}
     </div>
   )
