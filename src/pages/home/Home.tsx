@@ -28,7 +28,7 @@ function Home() {
   useEffect(() => {
     const interval = setInterval(() => {
       handleClipboardText()
-    }, 1000)
+    }, 100)
 
     return (): void => clearInterval(interval)
   }, [])

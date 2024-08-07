@@ -19,8 +19,8 @@ export default class AppHelper {
     }
 
     const newTextList = [...textList, { text, date: Date.now() }]
-    const limitedTextList = newTextList.slice(-8)
+    const sortedTextList = newTextList.sort((a, b) => b.date - a.date)
 
-    return limitedTextList.sort((a, b) => b.date - a.date)
+    return sortedTextList.slice(0, 8)
   }
 }
