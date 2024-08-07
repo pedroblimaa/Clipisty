@@ -17,8 +17,7 @@ fn main() {
     let tray = helpers::tray_handler::create_tray();
 
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![paste_text])
-        .invoke_handler(tauri::generate_handler![get_mouse_position])
+        .invoke_handler(tauri::generate_handler![get_mouse_position, paste_text])
         .system_tray(tray)
         .on_system_tray_event(|app, event| {
             helpers::tray_handler::handle_system_tray_event(app, event);

@@ -1,9 +1,6 @@
 use rdev::{simulate, EventType, Key};
 
 pub fn send_paste_keys() {
-    simulate_keypress(Key::ControlLeft, false);
-    simulate_keypress(Key::Alt, false);
-    simulate_keypress(Key::KeyV, false);
     simulate_keypress(Key::ControlLeft, true);
     simulate_keypress(Key::KeyV, true);
     simulate_keypress(Key::KeyV, false);

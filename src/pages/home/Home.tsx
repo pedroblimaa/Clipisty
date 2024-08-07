@@ -1,4 +1,4 @@
-import { clipboard, globalShortcut } from '@tauri-apps/api'
+import { clipboard, globalShortcut, invoke } from '@tauri-apps/api'
 import { appWindow } from '@tauri-apps/api/window'
 import { useEffect, useRef, useState } from 'react'
 
@@ -41,6 +41,10 @@ function Home() {
   const setToClipboard = (text: string) => {
     clipboard.writeText(text)
     appWindow.hide()
+
+    setTimeout(() => {
+      invoke('paste_text')
+    }, 10)
   }
 
   return (
