@@ -16,7 +16,7 @@ This was created for old windows system or VMs, which the common windows clipboa
 - **Lightweight & Fast:** Built with Tauri, the app is optimized for performance and low resource usage.
 
 ### Future Ideas
-- **Startup:** Add to startup automatically (Current can be done by this **[Add an app to run automatically at startup in Windows 10](**https:**//support.microsoft.com/en-us/windows/add-an-app-to-run-automatically-at-startup-in-windows-10-150da165-dcd9-7230-517b-cf3c295d89dd))**
+- **Startup:** Add to startup automatically (Current can be done by this **[Add an app to run automatically at startup in Windows 10](https://support.microsoft.com/en-us/windows/add-an-app-to-run-automatically-at-startup-in-windows-10-150da165-dcd9-7230-517b-cf3c295d89dd))**
 - **Configuration:** Add possibility to remap shortcut
 - **Images:** Add images
 - **Search:** Easily search through your clipboard history to find specific items.
@@ -71,5 +71,5 @@ The production-ready binaries will be available in the src-tauri/target/release 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgements
-- [Tauri](**https:**//tauri.app/) for the backend framework
-- [React](**https:**//react.dev/) for the frontend library
+- [Tauri](https://tauri.app/) for the backend framework
+- [React](https://react.dev/) for the frontend library
