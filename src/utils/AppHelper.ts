@@ -1,5 +1,5 @@
 import { clipboard } from "@tauri-apps/api"
-import { TextItem } from "../models/TextItemTemp"
+import { TextItem } from "../models/TextItem"
 
 export default class AppHelper {
 
