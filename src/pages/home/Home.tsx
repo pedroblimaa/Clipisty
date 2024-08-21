@@ -3,7 +3,7 @@ import { appWindow } from '@tauri-apps/api/window'
 import { useEffect, useRef, useState } from 'react'
 import CopyItem from '../../components/copy-item/CopyItem'
 import { TextItem } from '../../models/TextItemTemp'
-import AppHelper from '../../utils/AppHelper'
+import AppHelper from '../../utils/AppHelperTemp'
 import WindowHelper from '../../utils/WindowHelper'
 import './Home.css'
 
