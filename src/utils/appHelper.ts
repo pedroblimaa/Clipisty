@@ -2,10 +2,24 @@ import { clipboard, invoke } from "@tauri-apps/api"
 import { appWindow, PhysicalPosition } from "@tauri-apps/api/window"
 import { TextItem } from "../models/textItem"
 
+const WINDOW_HEIGHT = 600
+
+interface MonitorInfo {
+  position: { x: number, y: number },
+  size: { width: number, height: number }
+}
+
 export default class AppHelper {
   static async showWindowOnMousePosition() {
     const position = (await invoke('get_mouse_position')) as [number, number]
-    appWindow.setPosition(new PhysicalPosition(position[0], position[1]))
+    const monitors = await invoke('get_monitors') as MonitorInfo
+    console.log(monitors)
+
+    const windowYPosition = position[1] < WINDOW_HEIGHT ? WINDOW_HEIGHT : position[1]
+
+    console.log(windowYPosition)
+
+    appWindow.setPosition(new PhysicalPosition(position[0], windowYPosition))
     appWindow.show()
     appWindow.setFocus()
   }
