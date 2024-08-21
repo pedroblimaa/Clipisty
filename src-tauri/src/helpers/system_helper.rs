@@ -1,17 +1,12 @@
 use std::sync::Once;
 
 use mouse_position::mouse_position::Mouse;
-use serde::Serialize;
 use winit::{event_loop::EventLoop, monitor::MonitorHandle};
+
+use crate::structs::monitor_info::MonitorInfo;
 
 static INIT: Once = Once::new();
 static mut EVENT_LOOP: Option<EventLoop<()>> = None;
-
-#[derive(Debug, Serialize)]
-pub struct MonitorInfo {
-    position: (i32, i32),
-    size: (u32, u32),
-}
 
 pub fn get_mouse_position() -> (i32, i32) {
     match Mouse::get_mouse_position() {
