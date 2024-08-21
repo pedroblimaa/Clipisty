@@ -12,7 +12,7 @@
   },
   "tauri": {
     "systemTray": {
-      "iconPath": "icons/32x32.png",
+      "iconPath": "icons/logox32.png",
       "iconAsTemplate": true
     },
     "allowlist": {
@@ -69,11 +69,9 @@
       },
       "externalBin": [],
       "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
+        "icons/logox32.png",
+        "icons/logox128.png",
+        "icons/logo.ico"
       ],
       "identifier": "com.clipisty",
       "longDescription": "",
@@ -107,9 +105,10 @@
         "fullscreen": false,
         "resizable": true,
         "title": "Clipisty",
-        "height": 600,
-        "width": 500,
-        "decorations": false
+        "height": 500,
+        "width": 400,
+        "decorations": false,
+        "visible": false
       }
     ]
   }

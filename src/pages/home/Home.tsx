@@ -1,10 +1,10 @@
 import { clipboard, globalShortcut, invoke } from '@tauri-apps/api'
 import { appWindow } from '@tauri-apps/api/window'
 import { useEffect, useRef, useState } from 'react'
-
 import CopyItem from '../../components/copy-item/CopyItem'
-import { TextItem } from '../../models/textItem'
-import AppHelper from '../../utils/appHelper'
+import { TextItem } from '../../models/TextItem'
+import AppHelper from '../../utils/AppHelper'
+import WindowHelper from '../../utils/WindowHelper'
 import './Home.css'
 
 function Home() {
@@ -13,7 +13,7 @@ function Home() {
 
   useEffect(() => {
     globalShortcut.register('CmdOrCtrl+Alt+V', async () => {
-      AppHelper.showWindowOnMousePosition()
+      WindowHelper.showWindowOnMousePosition()
     })
 
     return () => {

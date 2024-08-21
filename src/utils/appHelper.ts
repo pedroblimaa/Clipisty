@@ -1,14 +1,7 @@
-import { clipboard, invoke } from "@tauri-apps/api"
-import { appWindow, PhysicalPosition } from "@tauri-apps/api/window"
-import { TextItem } from "../models/textItem"
+import { clipboard } from "@tauri-apps/api"
+import { TextItem } from "../models/TextItem"
 
 export default class AppHelper {
-  static async showWindowOnMousePosition() {
-    const position = (await invoke('get_mouse_position')) as [number, number]
-    appWindow.setPosition(new PhysicalPosition(position[0], position[1]))
-    appWindow.show()
-    appWindow.setFocus()
-  }
 
   static async createNewTextList(textList: TextItem[]): Promise<TextItem[]> {
     const text = await clipboard.readText()
