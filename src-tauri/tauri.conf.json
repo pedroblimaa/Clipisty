@@ -105,8 +105,8 @@
         "fullscreen": false,
         "resizable": true,
         "title": "Clipisty",
-        "height": 600,
-        "width": 500,
+        "height": 500,
+        "width": 400,
         "decorations": false,
         "visible": false
       }
