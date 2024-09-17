@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "clipisty",
-    "version": "0.1.0"
+    "version": "0.1.5"
   },
   "tauri": {
     "systemTray": {
@@ -98,7 +98,12 @@
       "csp": null
     },
     "updater": {
-      "active": false
+      "active": true,
+      "endpoints": [
+        "https://github.com/pedroblimaa/Clipisty/releases/latest/download/latest.json"
+      ],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDcyNDNDMEVCNUU0ODVEMDQKUldRRVhVaGU2OEJEY2hNMmJoRnFjOVNveGJ4L29ZeS9PL3FSZTFvdFllTy9DdWZuUXdmclZSNUsK"
     },
     "windows": [
       {

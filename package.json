@@ -1,14 +1,16 @@
 {
   "name": "clipisty-tauri",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:tauri": "sh ./scripts/build-app.sh",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "update:version": "sh ./scripts/update-version.sh"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.6.0",

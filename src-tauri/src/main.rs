@@ -35,5 +35,13 @@ fn main() {
             helpers::tray_handler::handle_system_tray_event(app, event);
         })
         .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+        .expect("error while building application");
+
+    // Uncomment this to test updater and set "builder" in the current "run"
+    // .run(|_app_handle, _event| match _event {
+    //     tauri::RunEvent::Updater(event) => {
+    //         dbg!(event);
+    //     }
+    //     _ => {}
+    // });
 }
