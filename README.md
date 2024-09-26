@@ -63,9 +63,10 @@ This will start the Tauri application in development mode.
 To build the app for production, **run:**
 
 ```
-npm run tauri build
+npm run build:tauri
 ```
 The production-ready binaries will be available in the src-tauri/target/release directory.
+> **_NOTE:_** If you don't have the updater key, you can turn off the updater in tauri.conf.json
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
