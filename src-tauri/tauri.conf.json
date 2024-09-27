@@ -100,7 +100,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://gist.github.com/pedroblimaa/ead36ef09b584f318bb2c82e4c6df269"
+        "https://github.com/pedroblimaa/Clipisty/releases/latest/download/latest.json"
       ],
       "dialog": true,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDcyNDNDMEVCNUU0ODVEMDQKUldRRVhVaGU2OEJEY2hNMmJoRnFjOVNveGJ4L29ZeS9PL3FSZTFvdFllTy9DdWZuUXdmclZSNUsK"

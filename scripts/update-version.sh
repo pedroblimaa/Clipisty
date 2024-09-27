@@ -3,6 +3,7 @@
 # Define color codes
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
+GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
 # Check if the version argument is provided
@@ -25,4 +26,10 @@ sed -i "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" ./src-tauri/tauri.conf
 # Update version in package.json
 sed -i "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" ./package.json
 
-echo "Version updated to $VERSION in all files."
+# Update version in latest.json
+sed -i "s/\"version\": \".*\"/\"version\": \"v$VERSION\"/" ./latest.json
+sed -i "s/download\/.*\//download\/$VERSION\//" ./latest.json
+sed -i "s/clipisty_.*_x/clipisty_$VERSION\_x/" ./latest.json
+
+
+echo -e "${GREEN}Version updated to $VERSION in all files.${NC}"
