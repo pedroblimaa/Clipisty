@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:tauri": "sh ./scripts/build-app.sh",
+    "build:tauri-prod": "sh ./scripts/build-app.sh -- --config src-tauri/tauri.conf-prod.json",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "tauri": "tauri",
