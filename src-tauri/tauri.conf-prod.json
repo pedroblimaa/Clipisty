@@ -31,8 +31,7 @@
         "hide": true,
         "maximize": false,
         "minimize": false,
-        "print": false,
-        "requestUserAttention": false,
+        "print": false,"requestUserAttention": false,
         "setAlwaysOnTop": false,
         "setClosable": false,
         "setContentProtected": false,
@@ -98,7 +97,7 @@
       "csp": null
     },
     "updater": {
-      "active": false,
+      "active": true,
       "endpoints": [
         "https://github.com/pedroblimaa/Clipisty/releases/latest/download/latest.json"
       ],
